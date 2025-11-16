@@ -1,15 +1,10 @@
 # Elysia with Bun runtime
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
-```
+normal mode: bun dev
 
-## Development
-To start the development server run:
-```bash
-bun run dev
-```
+load balancer pm2 & nginx
 
-Open http://localhost:3000/ with your browser to see the result.
+pm2 start src/index.ts --interpreter bun --name api-1 -- --port=3001
+pm2 start src/index.ts --interpreter bun --name api-2 -- --port=3002
+pm2 start src/index.ts --interpreter bun --name api-3 -- --port=3003
+pm2 start src/index.ts --interpreter bun --name api-4 -- --port=3004

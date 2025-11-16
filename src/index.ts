@@ -10,6 +10,20 @@ import cors from "@elysiajs/cors";
 
 new Elysia()
   // .use(openapi())
+  // Logging middleware di sini
+  .onRequest((ctx) => {
+    (ctx.store as { start: number }).start = performance.now();
+  })
+  .onAfterHandle((ctx) => {
+    const ms = (
+      performance.now() - (ctx.store as { start: number }).start
+    ).toFixed(1);
+    console.log(
+      `[${new Date().toISOString()}] [PORT:${env.PORT}] ${ctx.request.method} ${
+        ctx.request.url
+      } - ${ms}ms`
+    );
+  })
   .use(
     cors({
       origin: [

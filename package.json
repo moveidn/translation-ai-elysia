@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts"
+  },
+  "dependencies": {
+    "@elysiajs/jwt": "^1.4.0",
+    "@elysiajs/openapi": "^1.4.11",
+    "@supabase-js/source": "supabase/supabase-js",
+    "@supabase/supabase-js": "^2.81.1",
+    "drizzle-orm": "^0.44.7",
+    "elysia": "latest",
+    "openai": "^6.9.0",
+    "postgres": "^3.4.7"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "drizzle-kit": "^0.31.7"
+  },
+  "module": "src/index.js"
+}
